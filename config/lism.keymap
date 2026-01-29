@@ -54,13 +54,33 @@
 &kp Q         &kp W       &kp E         &kp R       &kp T                                                               &kp Y        &kp U       &kp I         &kp O       &kp P
 &kp A         &mt LALT S  &mt LSHIFT D  &mt LGUI F  &mt LCTRL G                                                         &mt RCTRL H  &mt RGUI J  &mt RSHIFT K  &mt RALT L  &kp MINUS
 &kp Z         &kp X       &kp C         &kp V       &kp B                                                               &kp N        &kp M       &kp COMMA     &kp DOT     &kp QUESTION
-&lt 5 ESCAPE  &lt 4 TAB   &lt 3 F16     &none       &lt 2 LEFT_PARENTHESIS  &lt 1 RIGHT_PARENTHESIS    &lt 1 BACKSPACE  &lt 2 SPACE  &none       &mkp MB1      &mkp MB2    &kp ENTER
+&lt 4 ESCAPE  &lt 3 TAB   &kp F16       &none       &lt 2 LEFT_PARENTHESIS  &lt 1 RIGHT_PARENTHESIS    &lt 1 BACKSPACE  &lt 2 SPACE  &none       &mkp MB1      &mkp MB2    &lt 5 ENTER
             >;
 
             sensor-bindings = <&encoder_msc SCRL_DOWN SCRL_UP>;
         };
 
         layer_1 {
+            display-name = "Num/Mark Layer";
+            bindings = <
+&none                 &none                  &none     &none      &none                                     &kp ASTERISK  &kp NUMBER_7            &kp NUMBER_8              &kp NUMBER_9            &kp LA(INT_YEN)
+&kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMI  &kp COLON  &none                                     &kp PLUS      &mt RIGHT_GUI NUMBER_4  &mt RIGHT_SHIFT NUMBER_5  &mt RIGHT_ALT NUMBER_6  &kp PERCENT
+&none                 &none                  &none     &none      &none                                     &kp MINUS     &kp NUMBER_1            &kp NUMBER_2              &kp NUMBER_3            &kp LA(SLASH)
+&none                 &none                  &none     &trans     &kp EXCLAMATION  &kp RS(SLASH)    &kp AT  &kp EQUAL     &trans                  &kp NUMBER_0              &kp COMMA               &kp PERIOD
+            >;
+        };
+
+        layer_2 {
+            display-name = "En/Fr Layer";
+            bindings = <
+&none      &none              &none          &none      &none                             &kp TILDE  &kp EXCLAMATION  &kp AT_SIGN       &kp HASH           &kp DOLLAR
+&kp GRAVE  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp SLASH  &kp APOSTROPHE                    &kp GRAVE  &kp UNDER        &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp BACKSLASH
+&none      &none              &none          &none      &none                             &kp PIPE   &kp PERCENT      &kp CARET         &kp AMPERSAND      &kp ASTERISK
+&trans     &trans             &none          &trans     &none           &trans    &trans  &none      &trans           &none             &none              &none
+            >;
+        };
+
+        layer_3 {
             display-name = "FCP Layer";
             bindings = <
 &none   &none   &none   &none   &none                        &kp F1             &kp F2           &kp F3     &none          &none
@@ -72,66 +92,24 @@
             sensor-bindings = <&encoder_msc SCRL_RIGHT SCRL_LEFT>;
         };
 
-        layer_2 {
-            display-name = "Number Layer";
-            bindings = <
-&kp RA(INT_YEN)  &kp NUMBER_7       &kp NUMBER_8         &kp NUMBER_9       &kp ASTERISK                    &kp ASTERISK  &kp NUMBER_7            &kp NUMBER_8              &kp NUMBER_9            &kp LA(INT_YEN)
-&kp PERCENT      &mt LALT NUMBER_4  &mt LSHIFT NUMBER_5  &mt LGUI NUMBER_6  &kp PLUS                        &kp PLUS      &mt RIGHT_GUI NUMBER_4  &mt RIGHT_SHIFT NUMBER_5  &mt RIGHT_ALT NUMBER_6  &kp PERCENT
-&kp RA(SLASH)    &kp NUMBER_1       &kp NUMBER_2         &kp NUMBER_3       &kp MINUS                       &kp MINUS     &kp NUMBER_1            &kp NUMBER_2              &kp NUMBER_3            &kp LA(SLASH)
-&kp PERIOD       &kp COMMA          &kp NUMBER_0         &trans             &kp EQUAL     &kp AT    &kp AT  &kp EQUAL     &trans                  &kp NUMBER_0              &kp COMMA               &kp PERIOD
-            >;
-        };
-
-        layer_3 {
-            display-name = "Mark Layer";
-            bindings = <
-&kp LS(LG(N4))  &kp F4   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none                        &kp TILDE  &kp EXCLAMATION  &kp AT_SIGN       &kp HASH           &kp DOLLAR
-&emoji          &kp F5   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none                        &kp GRAVE  &kp UNDER        &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp BACKSLASH
-&kp KP_NUMLOCK  &kp F11  &kp LEFT_BRACE        &kp RIGHT_BRACE        &none                        &kp PIPE   &kp PERCENT      &kp CARET         &kp AMPERSAND      &kp ASTERISK
-&trans          &trans   &kp NUMBER_0          &trans                 &kp SPACE  &trans    &trans  &none      &trans           &none             &none              &none
-            >;
-        };
-
         layer_4 {
+            status = "reserved";
+            display-name = "Brank Layer";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_5 {
             display-name = "Device Layer";
             bindings = <
 &none        &none           &none  &none  &bt BT_CLR                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &none        &none           &none  &none  &none                                &none         &none         &none         &none         &none
 &sys_reset   &none           &none  &none  &none                                &none         &none         &none         &none         &sys_reset
 &bootloader  &bt BT_CLR_ALL  &none  &none  &none       &none    &studio_unlock  &none         &none         &none         &none         &bootloader
-            >;
-        };
-
-        layer_5 {
-            status = "reserved";
-            display-name = "Brank Layer";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        layer_6 {
-            status = "reserved";
-            display-name = "Brank Layer";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        layer_7 {
-            status = "reserved";
-            display-name = "Brank Layer";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
